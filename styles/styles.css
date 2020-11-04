@@ -4,7 +4,7 @@ body {
   }
   
   .game-intro {
-    float: left;
+    margin: auto;
     padding: 0% 10%;
   }
   
@@ -32,8 +32,5 @@ body {
     margin-bottom: 20px;
   }
   
-  #game-board {
-      float: left;
-      padding: 20px 0px;
-  }
+  
   

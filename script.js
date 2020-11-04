@@ -1,5 +1,9 @@
 const canvas = document.getElementById("canvas");
+const btnStart = document.getElementById("start-button");
 const ctx = canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
 
 const houseImg = new Image();
 houseImg.src = "./img/peppahouse.jpg";
@@ -7,9 +11,13 @@ houseImg.src = "./img/peppahouse.jpg";
 const peppaImg = new Image();
 peppaImg.src = "./img/peppa.png";
 
-const obsImg = new Image();
-obsImg.src = "./img/ball1.png";
 
+let img1 = "./img/ball1.png";
+let img2 = "./img/dinossauro1.png";
+let img3 = "./img/icecream1.png";
+const obsImg = new Image();
+const imagens = [img1,img2,img3];
+obsImg.src = imagens[Math.floor(Math.random() * imagens.length)];
 
 
 const crashAudio = new Audio();
@@ -57,14 +65,12 @@ class Obstacle extends Component {
     move() {
       this.y += this.speed;
     }
-      // colocar as imagens randomicamente aqui.
-    draw() {
+     
+    draw() {       
+        
+         ctx.drawImage(obsImg, this.x, this.y, this.width, this.height);     
+        
       
-       ctx.drawImage(obsImg, this.x, this.y, this.width, this.height);     
-    
-      
-
-
     }
   }
   
@@ -121,7 +127,7 @@ class Obstacle extends Component {
         let maxX = canvas.width - 40 - width;
         let x = Math.floor(Math.random() * (maxX - minX + 1) + minX); 
   
-        const obstacle = new Obstacle(x, y, 40, 40, 5);
+        const obstacle = new Obstacle(x, y, 70, 70, 5);
   
         this.obstacles.push(obstacle);
       }
@@ -138,18 +144,18 @@ class Obstacle extends Component {
         crashAudio.play();
   
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.font = "40px Arial";
+        ctx.font = "50px Verdana";
         ctx.fillStyle = "pink";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "red";
-        ctx.fillText("Game Over!", canvas.width / 4, 200);
+        ctx.fillText("Game Over!", canvas.width / 2.5, 200);
         ctx.fillStyle = "white";
-        ctx.fillText(`Your Final Score: ${this.score}`, canvas.width / 6, 400);
+        ctx.fillText(`Your Final Score: ${this.score}`, canvas.width / 3, 400);
       }
     };
   
     updateScore = (score) => {
-      ctx.font = "20px Arial";
+      ctx.font = "30px Verdana";
       ctx.fillStyle = "pink";
   
       ctx.fillText(`Score ${this.score}`, 70, 20);
@@ -196,8 +202,8 @@ class Obstacle extends Component {
         this.x = 40;
       }
   
-      if (this.x >= canvas.width - 100) {
-        this.x = canvas.width - 100;
+      if (this.x >= canvas.width - 200) {
+        this.x = canvas.width - 200;
       }
     }
   
@@ -212,12 +218,13 @@ class Obstacle extends Component {
     };
   
     function startGame() {
-
-    
+       
+       btnStart.parentElement.style.display = "none";
+       canvas.style.display = "block";
 
       const game = new Game(
         new Background(0, 0, canvas.width, canvas.height),
-        new Player(canvas.width / 2 - 25, canvas.height - 150, 50, 100, 0)
+        new Player(canvas.width / 2 - 25, canvas.height - 150, 120, 120, 0)
       );
   
       game.updateGame();
