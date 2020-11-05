@@ -1,6 +1,6 @@
 const canvas = document.getElementById("canvas");
 const btnStart = document.getElementById("start-button");
-const btnRestart = document.getElementById("restart");
+// const btnRestart = document.getElementById("restart");
 const ctx = canvas.getContext("2d");
 canvas.width=document.documentElement.clientWidth * 0.99;
 canvas.height=document.documentElement.clientHeight * 0.98;
@@ -182,10 +182,10 @@ class Obstacle extends Component {
         ctx.fillText("Game Over!", canvas.width / 2.5, 200);
         ctx.fillStyle = "white";
         ctx.fillText(`Your Final Score: ${this.score}`, canvas.width / 3, 400);
-        btnRestart.parentElement.style.display = "block";
-         document.getElementById("restart").onclick = () => {
-           startGame();
-       }
+        //btnRestart.parentElement.style.display = "block";
+        // document.getElementById("restart").onclick = () => {
+         //  startGame();
+        //  }
           startGame();
           };
         
