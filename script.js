@@ -181,20 +181,14 @@ class Obstacle extends Component {
         ctx.fillStyle = "red";
         ctx.fillText("Game Over!", canvas.width / 2.5, 200);
         ctx.fillStyle = "white";
-<<<<<<< HEAD
+
         ctx.fillText(`Your Final Score: ${this.score}`, canvas.width / 3, 400);
         //btnRestart.parentElement.style.display = "block";
         // document.getElementById("restart").onclick = () => {
          //  startGame();
         //  }
-<<<<<<< HEAD
-=======
-        ctx.fillText(`  Your Final Score: ${this.score}`, canvas.width / 3, 400);
-        
-        
->>>>>>> master
-=======
->>>>>>> c9e10d539d082a4ea7c0fedf1ce4439de42c8190
+
+
           startGame();
           };
         
