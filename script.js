@@ -187,11 +187,14 @@ class Obstacle extends Component {
         // document.getElementById("restart").onclick = () => {
          //  startGame();
         //  }
+<<<<<<< HEAD
 =======
         ctx.fillText(`  Your Final Score: ${this.score}`, canvas.width / 3, 400);
         
         
 >>>>>>> master
+=======
+>>>>>>> c9e10d539d082a4ea7c0fedf1ce4439de42c8190
           startGame();
           };
         
