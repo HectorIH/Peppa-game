@@ -32,5 +32,16 @@ body {
     margin-bottom: 20px;
   }
   
+ 
   
+
+  #game-board canvas {
+      
+      display: none;
+  }
+
+  
+  #restart {
+      display: none;
+  }
   
