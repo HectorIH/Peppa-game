@@ -166,9 +166,9 @@ class Obstacle extends Component {
       if (crashed) {
             this.obstacles.splice(obsIndex, 1);
             this.score++;
-           //  
+           
       }
-           //
+           
       if(this.drop > 4) {
         cancelAnimationFrame(this.animationId);
   
@@ -181,11 +181,17 @@ class Obstacle extends Component {
         ctx.fillStyle = "red";
         ctx.fillText("Game Over!", canvas.width / 2.5, 200);
         ctx.fillStyle = "white";
+<<<<<<< HEAD
         ctx.fillText(`Your Final Score: ${this.score}`, canvas.width / 3, 400);
         //btnRestart.parentElement.style.display = "block";
         // document.getElementById("restart").onclick = () => {
          //  startGame();
         //  }
+=======
+        ctx.fillText(`  Your Final Score: ${this.score}`, canvas.width / 3, 400);
+        
+        
+>>>>>>> master
           startGame();
           };
         
