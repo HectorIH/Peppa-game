@@ -166,7 +166,7 @@ class Obstacle extends Component {
       if (crashed) {
             this.obstacles.splice(obsIndex, 1);
             this.score++;
-            
+           //  
       }
 
       if(this.drop > 4) {
