@@ -168,7 +168,7 @@ class Obstacle extends Component {
             this.score++;
            //  
       }
-
+           //
       if(this.drop > 4) {
         cancelAnimationFrame(this.animationId);
   
