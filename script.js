@@ -1,6 +1,5 @@
 const canvas = document.getElementById("canvas");
 const btnStart = document.getElementById("start-button");
-// const btnRestart = document.getElementById("restart");
 const ctx = canvas.getContext("2d");
 canvas.width=document.documentElement.clientWidth * 0.99;
 canvas.height=document.documentElement.clientHeight * 0.98;
@@ -181,21 +180,21 @@ class Obstacle extends Component {
         ctx.fillStyle = "red";
         ctx.fillText("Game Over!", canvas.width / 2.5, 200);
         ctx.fillStyle = "white";
-
         ctx.fillText(`Your Final Score: ${this.score}`, canvas.width / 3, 400);
-        //btnRestart.parentElement.style.display = "block";
-        // document.getElementById("restart").onclick = () => {
-         //  startGame();
-        //  }
+        ctx.font = "40px Verdana"
+        ctx.fillStyle = "white";
+        ctx.fillText(` Press ENTER to restart`, canvas.width / 3, 600);
+        document.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                
+                window.location.reload();
+                }
+        });
 
-
-          startGame();
+             
           };
-        
-      
-      
-      console.log(this.caiu);
-      
+       
+                 
          
     }; 
   
@@ -272,8 +271,7 @@ class Obstacle extends Component {
   
     function startGame() {
        
-       btnStart.parentElement.style.display = "none"; 
-       //btnRestart.parentElement.style.display = "none"      
+       btnStart.parentElement.style.display = "none";            
        canvas.style.display = "block";
 
       const game = new Game(
